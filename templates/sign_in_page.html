@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<header><title>sign in page</title></header>
+<body>
+<h1>Sign in</h1>
+<br>
+<p>{{ signinmessage }}</p>
+<form action='' method='POST' id="signinform">
+
+<label for ='username'>User Name : </label>
+<input type='text' id='username' required="required" placeholder="user name" name='signinuser' value='{{ request.form.signinuser}}'>
+<br>
+<br>
+<label for ='passw'>Password : </label>
+<input type='password' id='passw' required="required" placeholder="Password" name='signinpass' value='{{ request.form.signinpass}}'><br>
+<br>
+
+<label for ='cpassw'>conform Password : </label>
+<input type='text' id='cpassw' required="required" placeholder="Conform Password" name='signincpass' value='{{ request.form.signincpass}}'><br>
+<br>
+<br>
+<button type='submit' form='signinform' name='signin' value='submit'>create account</button>
+</form>
+<br>
+<p>contact us : menvar007@gmail.com</p>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<header><title>marking page</title></header>
+<body>
+<h1>Mark your attendance.</h1>
+<p></p>
+
+
+<form action='' method='POST' id='form'>
+<br>
+<br>
+hour:
+<select required="required" name='hour' value='{{ request.form.hour}}'>
+<option value='1'>1st hour</option>
+<option value='2'>2nd hour</option>
+<option value='3'>3rd hour</option>
+<option value='4'>4th hour</option>
+<option value='5'>5th hour</option>
+<option value='6'>6th hour</option>
+<option value='7'>7th hour</option>
+</select>
+<br>
+<br>
+subject:
+<select required="required" name='subject' value='{{ request.form.subject}}'>
+<option value='sub1'>sub1</option>
+<option value='sub2'>sub2 </option>
+<option value='sub3'>sub3</option>
+<option value='sub4'>sub4</option>
+<option value='sub5'>sub5</option>
+<option value='sub6'>sub6</option>
+<option value='sub7'>sub7</option>
+</select>
+<br>
+<br>
+
+present:
+<input type='radio' required="required" name='Radio' value='1'><br>
+absent:
+<input type='radio' name='Radio' value='0'><br>
+<br>
+</form>
+<button type='submit' form='form'  name='submit' value='marked'>mark</button>
+<br>
+<br>
+<br>
+<form method ='POST' id='showform'>
+<p><a href="/show_attendance">show attendance</a></p>
+<br>
+</form>
+<button type='submit' href="/home" form='showform' name='logedout' value='log_out'>log out</button>
+
+</body>
+</html>

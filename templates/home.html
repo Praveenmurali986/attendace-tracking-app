@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<header><title>mark_my_attendance</title></header>
+<h1>Log in </h1>
+<body>
+<p>Log in if you have already signed up.</p>
+<br>
+<p>{{ loginmessage }}</p>
+<br>
+<form action="" method='POST' id='loginform'>
+
+<label for ='username'>User Name : </label>
+<input type='text' required="required" id='username' placeholder="User Name" name='loginuser' value='{{ request.form.loginuser}}'>
+<br>
+<br>
+<label for ='passw'>Password : </label>
+<input type='password' required="required" id='passw'name='loginpass' placeholder="Password" value='{{ request.form.loginpass}}'><br>
+<br>
+<br>
+</form>
+<button type='submit' form='loginform'  name='namepasssubmit' value='submit'>log in</button>
+<br>
+<br>
+<p> Don't have a account? <a href="/sign_in">sign in</a></p>
+<br>
+<br>
+<p>contact us : menvar007@gmail.com</p>
+</body>
+
+
+</html>

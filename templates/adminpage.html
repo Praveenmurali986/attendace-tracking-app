@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<header><title>admin page</title></header>
+<body>
+<h1>hello praveen</h1>
+<br>
+<form action='' method='POST' id="adminform">
+<br>
+<br>
+<input type="text" name="get_password" value="{{ request.form.get_password}}">
+<button type='submit' form='adminform' name='admin1' >get Password</button>
+</form>
+<br>
+<br>
+<form  action='' id="delete_date" method="POST">
+    <label for="_user_name">user_name</label>
+    <input type="text" name="_user_name" value="{{ request.form._user_name}}">
+    <br>
+    <br>
+    <label for="_date">date</label>
+    <input type="text" name="_date" value="{{ request.form._date}}"><br>
+    <br>
+    <button form="delete_date" type="submit" >delete date</button>
+</form>
+<br>
+<br>
+<form action="" method="POST" id="del_acc_form">
+    <label for="del_acc_username">username</label>
+    <input type="text" name="del_acc_username" value="{{request.form.del_acc_username}}">
+    <button type="submit" form="del_acc_form" >del_account</button>
+</form>
+<br>
+<form action="" method="POST" id="acc_info">
+    <h1>get all accounts</h1>
+    <br>
+    <button type="submit" name="get_acc" form="acc_info" value='get_accounts'>get_accounts</button>
+    <br>
+</form>
+<br>
+<br>
+<form action="" method="POST" id='logform'>
+<label for="logofuser">user name</label>
+<input type="text" name="logofuser" value="{{request.form.logofuser}}">
+<br>
+<br>
+<label for="datelogofuser">date</label>
+<input type="text" name="datelogofuser" value="{{request.form.datelogofuser}}">
+<br>
+<br>
+<button type="submit" form="logform" >show logs</button>
+</form>
+<br>
+<form action="" method="POST" id="dellog">
+    <button type="submit" form="dellog" name="dellogs" value="dellog">delete due log</button>
+</form>
+<br><br>
+<br>
+<p>
+    {% for i in data_to_show %}
+    {{i}}
+    <br>
+    {% endfor %}
+
+</p>
+
+
+</body>
+</html>
