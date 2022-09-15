@@ -1,6 +1,4 @@
-from mimetypes import init
 import os
-from pickle import TRUE
 import sqlite3
 from my_methods.logger import log
 from datetime import datetime
