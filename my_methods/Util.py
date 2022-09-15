@@ -132,13 +132,8 @@ class Db:
             return False,None
 
     def check_admin(self,username,userpass):
-        cursor=self.conn_cursor()
-        log(username).info(f"exicute : [select password from logins where user_id='{username}']")
-        cursor.execute(f"select password from logins where user_id='{username}'")
-        data=cursor.fetchall()
-        for i in data:
-            password=i[0]
-        if password==userpass:
+        print(username,userpass)
+        if username==ADMIN_NAME and userpass==ADMIN_PASS:
             log(username).info('admin access granded')
             return True
         else:
