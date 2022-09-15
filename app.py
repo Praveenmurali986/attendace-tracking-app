@@ -4,7 +4,7 @@ from my_methods.Util import Db,show_log,del_log
 from flask import Flask,render_template,request,redirect,url_for
 from my_methods.logger import log
 
-DATA_BASE='example1.db'
+DATA_BASE='main.db'
 
 app=Flask(__name__)
 
