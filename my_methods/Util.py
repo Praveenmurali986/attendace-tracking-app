@@ -5,8 +5,8 @@ from datetime import datetime
 date=str(datetime.now())[:10]
 
 
-ADMIN_NAME='Menvar4077'
-ADMIN_PASS='wTa/mt75Of69'
+ADMIN_NAME=${{ secrets.SECRET_ADMINNAME }}
+ADMIN_PASS=${{ secrets.SECRET_ADMINPASS }}
 class Db:
     def __init__(self,db_name) -> None:
         self.db_name=db_name
