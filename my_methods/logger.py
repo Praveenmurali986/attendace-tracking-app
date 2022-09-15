@@ -1,5 +1,4 @@
 
-from distutils.log import INFO
 import logging
 from datetime import datetime
 import os
