@@ -217,9 +217,9 @@ def admin():
                                 except Exception as f:
                                     log('Menvar4077').info(f"logs deletion. [error : {f}]")
                                     print(f)
-
-                                    
-                                    
+    else:
+        return 'you are not an admin'                                
+        
 
     return render_template('adminpage.html')
 
