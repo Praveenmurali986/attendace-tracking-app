@@ -6,7 +6,7 @@ date=str(datetime.now())[:10]
 
 
 ADMIN_NAME='Menvar4077'
-ADMIN_PASS='wTa/mt75Of69'
+ADMIN_PASS='adminpass'
 class Db:
     def __init__(self,db_name) -> None:
         self.db_name=db_name
