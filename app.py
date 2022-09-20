@@ -95,6 +95,7 @@ def attendance():
             if logout=='log_out':
                 log(user_id).info(f"logged out succesfully")
                 del user_id
+                db.Close()
                 
 
                 return redirect(url_for('home'))
