@@ -26,14 +26,21 @@ jobs:
           # The email address associated with your Heroku account.
           # If you don't want to use repository secrets (which is recommended) you can do:
           # email: my.email@example.com
-          email: ${{ secrets.HEROKU_EMAIL }}
+          
+          admin_name : ${{ secrets.SECRET_admin_name }}
+          admin_pass : ${{ secrets.SECRET_admin_pass }}
+          db_username : ${{ secrets.SECRET_username }}
+          db_pass : ${{ secrets.SECRET_pass }}
+          db_host : ${{ secrets.SECRET_host }}
+  
+#           email: ${{ secrets.HEROKU_EMAIL }}
           
           # Heroku API key associated with provided user's email.
           # Api Key is available under your Heroku account settings.
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+#           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           
           # Name of the heroku application to which the build is to be sent.
-          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+#           heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
 
           # (Optional, default: "./")
           # Dockerfile directory.
