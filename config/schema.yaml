@@ -1,7 +1,7 @@
 {
-  admin_name : 'Menvar4077',
-  admin_pass : 'wTa/mt75Of69',
-  db_username : 'root',
-  db_pass : "Wlo/mt075",
-  db_host : 'localhost'
+  admin_name : ${{ secrets.SECRET_admin_name }},
+  admin_pass : ${{ secrets.SECRET_admin_pass }},
+  db_username : ${{ secrets.SECRET_username }},
+  db_pass : ${{ secrets.SECRET_pass }},
+  db_host : ${{ secrets.SECRET_host }}
 }
