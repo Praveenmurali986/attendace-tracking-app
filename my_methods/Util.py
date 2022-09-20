@@ -21,13 +21,14 @@ config_dir='config'
 schema_filename='schema.yaml'
 schema_filepath=os.path.join(config_dir,schema_filename)
 config=read_yaml_file(schema_filepath)
-
-ADMIN_PASS=config['admin_pass']
-ADMIN_NAME=config['admin_name']
-DB_USERNAME=config['db_username']
-DB_PASSWORD=config['db_pass']
-DB_HOST=config['db_host']
-
+try:
+    ADMIN_PASS=config['admin_pass']
+    ADMIN_NAME=config['admin_name']
+    DB_USERNAME=config['db_username']
+    DB_PASSWORD=config['db_pass']
+    DB_HOST=config['db_host']
+except Exception as e:
+    print(e)
 
 class Db:
     def __init__(self) -> None:
