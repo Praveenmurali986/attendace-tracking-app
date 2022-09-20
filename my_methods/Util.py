@@ -17,9 +17,9 @@ def read_yaml_file(file_path)->dict:
     except Exception as e:
         print(e)
 
-config_dir='config'
-schema_filename='schema.yaml'
-schema_filepath=os.path.join(config_dir,schema_filename)
+config_dir='.github'
+schema_filename='main.yaml'
+schema_filepath=os.path.join(config_dir,'workflows',schema_filename)
 config=read_yaml_file(schema_filepath)
 try:
     ADMIN_PASS=config['admin_pass']
