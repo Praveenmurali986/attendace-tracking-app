@@ -1,4 +1,4 @@
 flask
 gunicorn
-mysql.connector
+psycopg2
 PyYAML
