@@ -4,7 +4,7 @@ from my_methods.Util import Db,show_log,del_log
 from flask import Flask,render_template,request,redirect,url_for
 from my_methods.logger import log
 
-
+approve=True
 app=Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
@@ -18,30 +18,33 @@ def home():
     db.create_table(table_name='logins',cols=['user_id varchar','password varchar'])
     
     if request.method =='POST':
-        global username
-        username=str(request.form['loginuser'])
+        if approve:
+            global username
+            username=str(request.form['loginuser'])
 
-        global userpass
-        userpass=str(request.form['loginpass'])
-        table_name=username+'_attendance'
-        
+            global userpass
+            userpass=str(request.form['loginpass'])
+            table_name=username+'_attendance'
 
-        login,message=db.check_login(username=username,userpass=userpass)
-        
 
-        if login:
-            log(username).info('=========================login page===========================')
-            log(username).info(f'dbconnected successfuly')
-            log(username).info(f'login for {username} with password {userpass}')
-            log(username).info(message)
+            login,message=db.check_login(username=username,userpass=userpass)
 
-            db.create_table(table_name=table_name,cols=['dates varchar','time varchar','subject varchar','hour int','present int'])
-            log(username).info(f"table [{table_name}] created")
-            db.Close()
-            return redirect(url_for('attendance'))
+
+            if login:
+                log(username).info('=========================login page===========================')
+                log(username).info(f'dbconnected successfuly')
+                log(username).info(f'login for {username} with password {userpass}')
+                log(username).info(message)
+
+                db.create_table(table_name=table_name,cols=['dates varchar','time varchar','subject varchar','hour int','present int'])
+                log(username).info(f"table [{table_name}] created")
+                db.Close()
+                return redirect(url_for('attendance'))
+            else:
+                db.Close()
+                return render_template('home.html',loginmessage=message)
         else:
-            db.Close()
-            return render_template('home.html',loginmessage=message)
+            return 'login again'
     db.Close()
     return render_template('home.html',loginmessage='')
     
@@ -97,6 +100,7 @@ def attendance():
             if logout=='log_out':
                 log(user_id).info(f"logged out succesfully")
                 del user_id
+                approve= False
                 
                 db.Close()
                 return redirect(url_for('home'))
