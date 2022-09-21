@@ -6,6 +6,7 @@ from my_methods.logger import log
 
 
 app=Flask(__name__)
+app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 
 
