@@ -124,6 +124,7 @@ def attendance():
 
         if len(h_list)==7:
             db.Close()
+        del h_list
         
     return render_template('marking_page.html')
 
