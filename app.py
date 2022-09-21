@@ -44,7 +44,6 @@ def home():
             db.Close()
             return render_template('home.html',loginmessage=message)
         
-    db.Close()
     return render_template('home.html',loginmessage='')
     
 
