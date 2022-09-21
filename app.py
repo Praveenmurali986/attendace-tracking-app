@@ -13,10 +13,11 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 @app.route('/',methods=['GET','POST'])
 def home():
     
-    db=Db()
-    db.create_table(table_name='logins',cols=['user_id varchar','password varchar'])
+    
     
     if request.method =='POST':
+        db=Db()
+        db.create_table(table_name='logins',cols=['user_id varchar','password varchar'])
         
         global username
         username=str(request.form['loginuser'])
