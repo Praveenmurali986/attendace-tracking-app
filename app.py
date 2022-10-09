@@ -71,7 +71,7 @@ def signin():
                     log(username).info(f"sign in details saved succesfully.")
             except Exception as e:
                 log(username).info(f"error in sign in")
-                
+                db.Close()
                 return render_template('sign_in_page.html',signinmessage='user name already taken.')
             db.Close()
             return redirect(url_for('home'))
